@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom'
 //IMPORTING REDUX STUFF
 import { createStore, combineReducers } from 'redux'
 
-import { addToDo } from './store'
-import todos from './store'
+import todos, { addToDo } from './store/todos'
+import counter from './store/counter'
 import './index.css'
 import App from './App'
 
 //REDUX STUFF GOES HERE
 const rootReducer = combineReducers({
-    todos
+    todos,
+    counter
 })
 const store = createStore(
     rootReducer,
