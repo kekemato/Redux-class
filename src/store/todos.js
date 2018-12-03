@@ -5,7 +5,7 @@ const DELETE_TODO = 'DELETE_TODO'
 
 const INITIAL_STATE = {
     allToDos: [],
-    visibleToDos: []
+    visibleToDos: [],
 }
 
 export const deleteToDo = index => ({
