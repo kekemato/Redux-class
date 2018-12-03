@@ -7,7 +7,8 @@ export const addToDo = text => ({
 })
 
 // export const switchToDoCompleted = (index) => ({
-//     type: SWITCH_TODO_COMPLETED
+//     type: SWITCH_TODO_COMPLETED,
+//     index,
 // })
 
 export default (state = [], action) => {

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 
 import todos, { addToDo } from './store/todos'
-import counter from './store/counter'
+import counter, { increment, decrement } from './store/counter'
 import './index.css'
 import App from './App'
 
@@ -17,15 +17,20 @@ const store = createStore(
     rootReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ &&
     window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+)
 //END OF REDUX STUFF
 
-console.warn('before dispatch', store.getState())
 store.dispatch(addToDo('Go shopping'))
 store.dispatch(addToDo('Make bed'))
 store.dispatch(addToDo('Wash the dishes'))
 store.dispatch(addToDo('Clean the bathroom'))
-console.warn('after dispatch',store.getState())
+store.dispatch(increment())
+store.dispatch(increment())
+store.dispatch(decrement())
+
+window.increaseCounter = () => store.dispatch(increment())
+window.decreaseCounter = () => store.dispatch(decrement())
+window.addToDo = (text) => store.dispatch(addToDo(text))
 
 ReactDOM.render(
     <App />,
