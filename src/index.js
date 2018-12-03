@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 
 import todos, { addToDo } from './store/todos'
-import counter, { increment, decrement } from './store/counter'
+import counter, { increment, decrement, reset } from './store/counter'
 import './index.css'
 import App from './App'
 
@@ -30,6 +30,7 @@ store.dispatch(decrement())
 
 window.increaseCounter = () => store.dispatch(increment())
 window.decreaseCounter = () => store.dispatch(decrement())
+window.resetCounter = () => store.dispatch(reset())
 window.addToDo = (text) => store.dispatch(addToDo(text))
 
 ReactDOM.render(
