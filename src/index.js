@@ -27,7 +27,6 @@ store.dispatch(addToDo('Go shopping'))
 store.dispatch(addToDo('Make bed'))
 store.dispatch(addToDo('Wash the dishes'))
 store.dispatch(addToDo('Clean the bathroom'))
-store.dispatch(increment())
 store.dispatch(addToCart(20, 'Jeansy'))
 store.dispatch(addToCart(20, 'Kurtka'))
 
