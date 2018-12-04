@@ -39,10 +39,10 @@ export default (state = INITIAL_STATE, action) => {
         case FILTER_TODO:
             return {
                 ...state,
-                visibleToDos: state.allToDos.filter(todo => {
+                visibleToDos: state.allToDos.filter(todo =>
                     todo.text.toLowerCase().replace(/\s/g, '')
                         .includes(action.input.toLowerCase().replace(/\s/g, ''))
-                })
+                )
             }
         case TOGGLE_TODO:
             return {
@@ -56,9 +56,9 @@ export default (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 allToDos: state.allToDos.filter((todo, index) => !(index === action.index))
-    }
+            }
         default:
-    return state
-}
+            return state
+    }
 
 }

@@ -2,10 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 //IMPORTING REDUX STUFF
 import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
 
 import todos, { addToDo, filterToDo, toggleToDo, deleteToDo } from './store/todos'
 import counter, { increment, decrement, reset } from './store/counter'
-import cart, {addToCart} from './store/cart'
+import cart, { addToCart } from './store/cart'
 import './index.css'
 import App from './App'
 
@@ -39,5 +40,7 @@ window.toggleToDo = (index) => store.dispatch(toggleToDo(index))
 window.deleteToDo = (index) => store.dispatch(deleteToDo(index))
 
 ReactDOM.render(
-    <App />,
+    <Provider store={store}>
+        <App />
+    </Provider>,
     document.getElementById('root'))
