@@ -2,12 +2,14 @@ const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
 const RESET = 'RESET'
 
-export const increment = () => ({
-    type: INCREMENT
+export const increment = (num) => ({
+    type: INCREMENT,
+    num: num || 1
 })
 
-export const decrement = () => ({
-    type: DECREMENT
+export const decrement = (num) => ({
+    type: DECREMENT,
+    num: num || 1
 })
 
 export const reset = () => ({
@@ -17,10 +19,13 @@ export const reset = () => ({
 export default (state = 0, action) => {
     switch (action.type) {
         case INCREMENT:
-            return (state + 1)
+            return (state + action.num)
         case DECREMENT:
-            return (state - 1)
-            case RESET:
+            if (state > 0)
+                return (state - action.num)
+            else
+                alert('cannot go below 0')
+        case RESET:
             return (state = 0)
         default:
             return state
