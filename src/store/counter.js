@@ -25,6 +25,7 @@ export default (state = 0, action) => {
                 return (state - action.num)
             else
                 alert('cannot go below 0')
+                break
         case RESET:
             return (state = 0)
         default:
