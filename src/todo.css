@@ -1,0 +1,33 @@
+.input-container {
+    margin: 10px;
+}
+
+.input {
+    padding: 5px;
+}
+
+.input-button {
+    padding: 5px;
+    margin-left: 10px;
+    background-color: rgb(69, 103, 179);
+    color: white
+}
+
+.todo {
+    border: 1px solid black;
+    width: 25%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.btn {
+    border-radius: 100%;
+    opacity: 0.8;
+    font-weight: bold;
+}
+
+.btn:hover {
+    opacity: 1;
+}
