@@ -4,18 +4,18 @@ import { connect } from 'react-redux'
 import { addToDo } from './store/todos'
 
 const mapStateToProps = store => ({
-    todos: store.todos.allToDos
+    _todos: store.todos.allToDos
   })
 
 const mapDispatchToProps = dispatch => ({
-    addToDo: text => dispatch(addToDo(text))
+    _addToDo: text => dispatch(addToDo(text))
 })
 
 class ToDoList extends React.Component {
     state = {}
 
     handleButtonClick = () => {
-       this.props.addToDo(this.state.value)
+       this.props._addToDo(this.state.value)
     }
 
     handleInputChange = (event) => {
@@ -30,7 +30,7 @@ class ToDoList extends React.Component {
                 <button onClick={this.handleButtonClick}>
                     Add todo
                 </button>
-                {this.props.todos.map(todo =>
+                {this.props._todos.map(todo =>
                     <div key={todo.text}>
                         {todo.text}
                     </div>
